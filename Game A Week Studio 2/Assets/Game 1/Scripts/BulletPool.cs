@@ -36,7 +36,7 @@ public class BulletPool : MonoBehaviour
             }
         }
 
-        if (notEnoughBulletsInPool)
+        if (notEnoughBulletsInPool) // Spawn more bullets if the pool isnt big enough
         {
             GameObject bul = Instantiate(pooledBullet);
             bul.SetActive(false);

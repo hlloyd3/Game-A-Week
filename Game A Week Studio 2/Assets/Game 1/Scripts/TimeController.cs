@@ -31,7 +31,7 @@ public class TimeController : MonoBehaviour
         {
             currentSlowTimer -= Time.deltaTime;
             playerSpeedScaler = 0.75f;
-            enemySpeedScaler = 0.5f;
+            enemySpeedScaler = 0.3f;
         }
         else
         {

@@ -16,9 +16,8 @@ public class EnemyMovement : MonoBehaviour
     private void Update()
     {
         Vector3 dir = player.position - transform.position;
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg; // Always face the player
         rb.rotation = angle;
-        //Debug.Log(dir);
     }
 
 }

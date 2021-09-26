@@ -76,4 +76,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "EndPoint")
+        {
+            Debug.Log("You Win!");
+        }
+    }
+
 }
