@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     private float speedScale;
     public int gravity;
 
+    public GameObject winScreen;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -76,11 +78,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "EndPoint")
         {
             Debug.Log("You Win!");
+            winScreen.SetActive(true);
+            GetComponent<BoxCollider2D>().gameObject.SetActive(false);
+            GetComponent<PlayerController>().gameObject.SetActive(false);
         }
     }
 

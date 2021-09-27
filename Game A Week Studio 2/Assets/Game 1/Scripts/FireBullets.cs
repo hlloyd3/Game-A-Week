@@ -19,8 +19,11 @@ public class FireBullets : MonoBehaviour
 
     private Vector2 bulletMoveDirection;
 
+    AudioSource shootNoise;
+
     private void Start()
     {
+        shootNoise = GetComponent<AudioSource>();
         InvokeRepeating("Fire", startDelay, shootTimer); //Fire every blank seconds after a delay
     }
 
@@ -28,6 +31,8 @@ public class FireBullets : MonoBehaviour
     {
         float angleStep = (endAngle - startAngle) / bulletsAmount;
         float angle = startAngle;
+        //shootNoise.Play();
+        Debug.Log("I have shot!");
 
         for (int i = 0; i < bulletsAmount; i++)
         {
