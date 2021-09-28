@@ -18,7 +18,7 @@ public class RipplePostProcessor : MonoBehaviour
         this.Amount *= this.Friction;
     }
 
-    public void RippleEffect()
+    public void CameraRipple()
     {
         this.Amount = this.MaxAmount;
         Vector3 pos = Input.mousePosition;

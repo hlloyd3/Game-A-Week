@@ -57,7 +57,7 @@ public class TimeController : MonoBehaviour
     void ToggleTimeControl()
     {
         isSlowingTime = !isSlowingTime;
-        camRipple.RippleEffect();
+        camRipple.CameraRipple();
     }
 
 }
