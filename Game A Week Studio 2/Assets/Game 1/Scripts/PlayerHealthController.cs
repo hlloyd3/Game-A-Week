@@ -16,6 +16,9 @@ public class PlayerHealthController : MonoBehaviour
     public GameObject player;
     public GameObject deathScreen;
 
+    public SpriteRenderer[] bodyParts;
+    public Color hurtColor;
+
     private void Start()
     {
         currentHealth = maxHealth;
@@ -52,7 +55,21 @@ public class PlayerHealthController : MonoBehaviour
 
     public void LoseHealth()
     {
+        StartCoroutine(Flash());
         currentHealth -= 1;
+    }
+
+    IEnumerator Flash()
+    {
+        for (int i = 0; i < bodyParts.Length; i++)
+        {
+            bodyParts[i].color = hurtColor;
+        }
+        yield return new WaitForSeconds(0.1f);
+        for (int i = 0; i < bodyParts.Length; i++)
+        {
+            bodyParts[i].color = Color.white;
+        }
     }
 
     public void KillPlayer()
