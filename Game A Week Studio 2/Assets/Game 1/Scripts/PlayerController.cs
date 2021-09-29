@@ -25,9 +25,12 @@ public class PlayerController : MonoBehaviour
 
     public GameObject winScreen;
 
+    private Animator anim;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -43,20 +46,39 @@ public class PlayerController : MonoBehaviour
 
         speedScale = speedController.GetComponent<TimeController>().playerSpeedScaler;
 
+        if(moveInput == 0)
+        {
+            anim.SetBool("isRunning", false);
+        }
+        else
+        {
+            anim.SetBool("isRunning", true);
+        }
+
         if(moveInput > 0)
         {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            transform.eulerAngles = new Vector3(0, 180, 0);
         }
         else if( moveInput < 0)
         {
-            transform.eulerAngles = new Vector3(0, 180, 0);
+            transform.eulerAngles = new Vector3(0, 0, 0);
         }
 
         if(isGrounded == true && Input.GetKeyDown(KeyCode.Space))
         {
+            anim.SetTrigger("TakeOff");
             isJumping = true;
             currentJumpTime = maxJumpTime;
             rb.velocity = Vector2.up * jumpForce;
+        }
+
+        if (isGrounded)
+        {
+            anim.SetBool("isJumping", false);
+        }
+        else
+        {
+            anim.SetBool("isJumping", true);
         }
 
         if (Input.GetKey(KeyCode.Space) && isJumping == true)
