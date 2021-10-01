@@ -90,11 +90,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AlphaClip: 0
-    - _Amount: 6e-45
+    - _Amount: 0
     - _Blend: 0
     - _BumpScale: 1
-    - _CenterX: 490.24997
-    - _CenterY: 544.5
+    - _CenterX: 289.5
+    - _CenterY: 631.5
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
