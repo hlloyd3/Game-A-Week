@@ -5,10 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Game 1/Scenes/Menu.unity
     guid: 72948bbc52bab194880d170225230d55
-  - enabled: 1
+  - enabled: 0
     path: Assets/Game 1/Scenes/Platformer.unity
     guid: 0f932e941e3e0574ea3cfec61fb3299d
+  - enabled: 1
+    path: Assets/Game 2/Scenes/Week2Menu.unity
+    guid: 6eed1e66b52316e468de3a09e277aa56
+  - enabled: 1
+    path: Assets/Game 2/Scenes/Level1.unity
+    guid: 9fa243bc78782fd46b9abc1f260b6162
   m_configObjects: {}
