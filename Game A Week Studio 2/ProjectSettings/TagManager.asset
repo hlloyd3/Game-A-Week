@@ -8,6 +8,7 @@ TagManager:
   - EndPoint
   - Music
   - Waypoints
+  - Destroyer
   layers:
   - Default
   - TransparentFX
